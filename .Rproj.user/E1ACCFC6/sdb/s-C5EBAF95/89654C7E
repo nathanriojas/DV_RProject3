@@ -1,0 +1,18 @@
+{
+    "contents" : "\n\nSolo_1995 <- df %>% select(COMPANY, YEAR,PROFIT_IN_MILLIONS_, REVENUE_IN_MILLIONS_)  %>% filter(YEAR == 1955) %>% mutate(Rev = as.numeric(as.character(REVENUE_IN_MILLIONS_)), prof_percent = cume_dist(as.numeric(PROFIT_IN_MILLIONS_)), Ninety_Percentile= prof_percent > .90) %>% filter(prof_percent > .5,Rev>600) %>% tbl_df\nX <- df %>% group_by(RANK, YEAR) %>% select(COMPANY, YEAR, PROFIT_IN_MILLIONS_) %>% filter(RANK < 6, YEAR<2005) %>% tbl_df\nY <- df %>% select(COMPANY, REVENUE_IN_MILLIONS_, PROFIT_IN_MILLIONS_, YEAR, RANK) %>% filter(YEAR %in% c(1955:2004),COMPANY%in%c(\"U.S. Steel\",\"General Motors\",\"Exxon Mobil\",\"General Electric\",\"Esmark\")) %>% arrange(YEAR) %>% tbl_df\n\n\nView(Solo_1995)\nView(X)\nView(Y)\n\n",
+    "created" : 1444590768362.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4013739332",
+    "id" : "89654C7E",
+    "lastKnownWriteTime" : 1444590802,
+    "path" : "~/DataVisualization/Project 3/02 Data Wrangling/Business Wrangling.R",
+    "project_path" : "02 Data Wrangling/Business Wrangling.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

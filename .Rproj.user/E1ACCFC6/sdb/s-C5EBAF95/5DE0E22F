@@ -1,0 +1,17 @@
+{
+    "contents" : "gotem\n",
+    "created" : 1444541085626.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "630635561",
+    "id" : "5DE0E22F",
+    "lastKnownWriteTime" : 1444541025,
+    "path" : "~/DataVisualization/Project 3/02 Data Wrangling/Tilly 2.R",
+    "project_path" : "02 Data Wrangling/Tilly 2.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
