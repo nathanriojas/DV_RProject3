@@ -1,0 +1,17 @@
+{
+    "contents" : "require(\"ggplot2\")\n\nrequire(\"ggthemes\")\n\nrequire(\"gplots\")\n\nrequire(\"grid\")\n\nrequire(\"RCurl\")\n\nrequire(\"reshape2\")\n\nrequire(\"rstudio\")\n\nrequire(\"tableplot\")\n\nrequire(\"tidyr\")\n\nrequire(\"dplyr\")\n\nrequire(\"jsonlite\")\n\nrequire(\"extrafont\")\n\nrequire(\"lubridate\")",
+    "created" : 1444779215958.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1633910076",
+    "id" : "E44F2C1D",
+    "lastKnownWriteTime" : 1443298854,
+    "path" : "~/DataVisualization/Rprofile.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
