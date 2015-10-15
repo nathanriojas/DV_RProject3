@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Solo_1995 <- df %>% select(COMPANY, YEAR,PROFIT_IN_MILLIONS_, REVENUE_IN_MILLIONS_)  %>% filter(YEAR == 1955) %>% mutate(Rev = as.numeric(as.character(REVENUE_IN_MILLIONS_)), prof_percent = cume_dist(as.numeric(PROFIT_IN_MILLIONS_)), Ninety_Percentile= prof_percent > .90) %>% filter(prof_percent > .5,Rev>600) %>% tbl_df
 
 Summarized <- df %>% group_by(YEAR, RANK,REVENUE_IN_MILLIONS_ ) %>% summarise(Expenses = sum(-as.numeric(as.character(PROFIT_IN_MILLIONS_)),as.numeric(as.character(REVENUE_IN_MILLIONS_))))%>%filter(RANK == 1|RANK==10,YEAR%in%c(1975:2000)) %>% tbl_df
@@ -20,4 +21,9 @@ dplyr::left_join(Dow_Jones, Fortune500, by="YEAR") %>% select(YEAR, Date, Open_,
 
 
 
+=======
+dplyr::left_join(Fortune500, Country, by="YEAR") %>% filter(YEAR %in% c("1980", "1990", "2000"), RANK < 10) %>% View
+
+dplyr::inner_join(Dow_Jones, Fortune500, by="YEAR") %>% View
+>>>>>>> 9bf2abbd35e32bf9778b53addb8b34552cda0426
 
