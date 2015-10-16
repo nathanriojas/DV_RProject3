@@ -10,8 +10,6 @@ require("RCurl")
 
 require("reshape2")
 
-require("rstudio")
-
 require("tableplot")
 
 require("tidyr")
