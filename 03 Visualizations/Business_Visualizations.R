@@ -2,25 +2,26 @@
 
 require(extrafont)
 
-#Graph 1: This graph looks at the Fortune 500 companies in 1955 that had a revenue greater than $600 Million and highlights whether or not they are in the 90th percentile of the cumulative distribution function for profits.
-
+#Graph 1: This graph compares Exxon Mobil and Chevron Texaco from 1990 to 2000 on their profit in millions and the amount of oil produced in MCF.
 
 ggplot() + 
   coord_cartesian() + 
-  scale_x_discrete() +
-  scale_y_continuous() +
-  labs(title='Revenue vs Company in 1955') +
+  scale_x_continuous() +
+  scale_y_discrete() +
+  facet_wrap(~COMPANY) +
+  labs(title='Exxon Mobil vs Chevron Texaco between 1985 to 2000') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="Company", y=paste("Revenue > 600 Million")) +
-  layer(data=Solo_1995, 
-        mapping=aes((x=COMPANY), y=(Rev), color=Ninety_Percentile), 
+  labs(x="Barrels of Gas Produced in MCF", y=paste("Profit in Millions")) +
+  layer(data=Fortune_Gas, 
+        mapping=aes((x=gas_prod), y=(PROFIT_IN_MILLIONS_), color=as.character(YEAR)), 
         stat="identity", 
         stat_params=list(), 
         geom="bar",
+        geom_bar(colour = "black",position = "dodge",stat = "identity"),
         geom_params=list(), 
-        #position=position_identity()
-        position=position_jitter(width=0.3, height=0)
-  )
+       #position=position_identity()
+       position=position_jitter(width=0.3, height=0)
+   )
 
 
 
