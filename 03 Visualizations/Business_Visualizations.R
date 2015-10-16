@@ -1,6 +1,6 @@
 #Our unique graphs are found at the bottom of this code with a description of it in the comments.
 
-require(extrafont)
+
 
 #Graph 1: This graph compares Exxon Mobil and Chevron Texaco from 1990 to 2000 on their profit in millions and the amount of oil produced in MCF.
 
