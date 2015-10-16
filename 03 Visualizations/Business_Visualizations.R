@@ -2,22 +2,22 @@
 
 
 
-#Graph 1: This graph compares Exxon Mobil and Chevron Texaco from 1990 to 2000 on their profit in millions and the amount of oil produced in MCF.
+#Graph 1: This graph compares Exxon Mobil, Chevron Texaco, and Conoco Philips from 1990 to 2000 on their profit vs the amount of oil produced in MCF.
 
 ggplot() + 
   coord_cartesian() + 
   scale_x_continuous() +
-  scale_y_discrete() +
+  scale_y_continuous() +
   facet_wrap(~COMPANY) +
-  labs(title='Exxon Mobil vs Chevron Texaco between 1985 to 2000') +
+  labs(title="Gas Production vs Profit for Three Fortune 500 Energy Companies in the 90's") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x="Barrels of Gas Produced in MCF", y=paste("Profit in Millions")) +
   layer(data=Fortune_Gas, 
-        mapping=aes((x=gas_prod), y=(PROFIT_IN_MILLIONS_), color=as.character(YEAR)), 
+        mapping=aes((x=as.numeric(as.character(gas_prod))), y=(as.numeric(as.character(PROFIT_IN_MILLIONS_))), color=(Year)), 
         stat="identity", 
         stat_params=list(), 
         geom="bar",
-        geom_bar(colour = "black",position = "dodge",stat = "identity"),
+        geom_bar(width = .01,colour = "yellow",position = position_dodge(),stat = "identity"),
         geom_params=list(), 
        #position=position_identity()
        position=position_jitter(width=0.3, height=0)
