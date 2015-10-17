@@ -17,7 +17,7 @@ Dow_Country <- dplyr::left_join(Dow, Country, by="YEAR") %>% select(YEAR,opening
 
 
 #Combine Fortune 500 and Country population data to create a revenue relative to population data set including year and ranks.
-Fortune_Country <- dplyr::right_join(Fortune500, Country, by="YEAR") %>% select(YEAR, NORTH_AMERICA, REVENUE_IN_MILLIONS_, COMPANY, RANK) %>% filter(YEAR %in% c("1980", "1990", "2000"), RANK <= 5) %>% View
+Fortune_Country <- dplyr::right_join(Fortune500, Country, by="YEAR") %>% select(YEAR, NORTH_AMERICA, REVENUE_IN_MILLIONS_, COMPANY, RANK) %>% filter(YEAR %in% c("1980", "1990", "2000"), RANK <= 5) %>% tbl_df
 
 
 
