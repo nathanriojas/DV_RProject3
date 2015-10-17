@@ -1,7 +1,6 @@
 #Our unique graphs are found at the bottom of this code with a description of it in the comments.
 
 
-
 #Graph 1: This graph compares Exxon Mobil, Chevron Texaco, and Conoco Philips from 1990 to 2000 on their profit vs the amount of oil produced in MCF.
 
 ggplot() + 
