@@ -8,7 +8,7 @@ ggplot() +
   scale_x_continuous() +
   scale_y_continuous() +
   facet_wrap(~COMPANY) +
-  labs(title="Gas Production vs Profit for Three Fortune 500 Energy Companies in the 90's") +
+  labs(title="Gas Production vs Profit for Three Fortune 500 Energy Companies") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x="Barrels of Gas Produced in MCF", y=paste("Profit in Millions")) +
   layer(data=Fortune_Gas, 
@@ -54,7 +54,7 @@ ggplot() +
   scale_x_continuous() +
   scale_y_continuous() +
   facet_grid(~RANK, labeller = label_both) +
-  labs(title='Revenue of the Top 5 Fortune 500 Companies Given the Year Relative to Population') +
+  labs(title='Top Fortune 500 Companies Revenue vs Population') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x="North American Population in Millions", y=paste("Revenue in Millions")) +
   layer(data=Fortune_Country, 

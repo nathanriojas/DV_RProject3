@@ -1,8 +1,8 @@
 ---
-Title: "Project 3 Knit"
-Authors: "Nathan Riojas, Ryan Billa, Corey Monreal-Jackson"
-Date: "October 10, 2015"
-Output: html_document
+title: "Project 3 Knit"
+authors: "Nathan Riojas, Ryan Billa, Corey Monreal-Jackson"
+date: "October 10, 2015"
+output: html_document
 ---
 
 #### Steps used to create this project
@@ -28,7 +28,7 @@ Output: html_document
 
 #### R markdown code
 #####Immediately below are the codes we adjusted from the R_ETL.R file to create tables for our CSV files. Its is directly pasted from the code because in the code it calls the csv so it cannot run if sourced.
-#####The .R file is called using the command directly after. The subsequent code/graphs illustrates the code that goes into
+#####The .R file is called using the command directly after. The subsequent code/graphs illustrates the code that goes into creating our graphs.
 
 
 ```
@@ -322,6 +322,6 @@ Output: html_document
 ```{r warning = FALSE}
 source("../00 Doc/RPROFILE.R", echo = TRUE)
 source("../01 Data/Business_DataFrames.R", echo = TRUE)
-source("../02 Data Wrangling/Business Wrangling.R", echo = TRUE)
+source("../02 Data Wrangling/Business_Wrangling.R", echo = TRUE)
 source("../03 Visualizations/Business_Visualizations.R", echo = TRUE)
 ```{r}

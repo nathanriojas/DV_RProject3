@@ -13,7 +13,7 @@ Fortune_Gas <- dplyr::inner_join(Production, Fortune500, by="YEAR") %>% select( 
 Dow <- Dow_Jones[,c("YEAR","High","Low")] %>% group_by(YEAR) %>% summarise(high = mean(as.numeric(as.character( High))))%>% tbl_df
 
 #Wrangle 2. Combine world population data with the Dow Jones industrial average data
-Dow_Country <- dplyr::left_join(Country,Dow, by="YEAR") %>% select(YEAR,high,low,WORLD) %>% filter(YEAR < 2006)%>% tbl_df
+Dow_Country <- dplyr::left_join(Country,Dow, by="YEAR") %>% select(YEAR,high, WORLD) %>% filter(YEAR < 2006)%>% tbl_df
 
 
 #Wrangle 3. Combine Fortune 500 and Country population data to create a revenue relative to population data set including year and ranks.
