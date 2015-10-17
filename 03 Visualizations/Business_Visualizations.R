@@ -12,71 +12,53 @@ ggplot() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x="Barrels of Gas Produced in MCF", y=paste("Profit in Millions")) +
   layer(data=Fortune_Gas, 
-        mapping=aes((x=as.numeric(as.character(gas_prod))), y=(as.numeric(as.character(PROFIT_IN_MILLIONS_))), color=(Year)), 
+        mapping=aes((x=as.numeric(as.character(gas_prod))), y=(as.numeric(as.character(PROFIT_IN_MILLIONS_))), color=(as.numeric(as.character(Year)))), 
         stat="identity", 
         stat_params=list(), 
-        geom="bar",
-        geom_bar(width = .01,colour = "yellow",position = position_dodge(),stat = "identity"),
-        geom_params=list(), 
-       #position=position_identity()
-       position=position_jitter(width=0.3, height=0)
-   )
+        geom="point",
+        #geom_bar(width = 2,colour = "yellow",position = position_dodge(),stat = "identity"),
+        geom_params=list(size = 3), 
+        #position=position_identity()
+        position=position_jitter(width=0.3, height=0)
+  )+
+  scale_colour_gradient("Year",low= 'orange', high='midnightblue')
 
 
-
-#Graph 2: This graph looks at the top 5 ranked fortune 500 companies in 1955 and how their rankings have changed from then to 2000
-
-# ggplot() + 
-#   coord_cartesian() + 
-#   scale_x_discrete() +
-#   scale_y_continuous() +
-#   labs(title='Top 5 Companies in 1955 Over Time') +
-#   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-#   labs(x="Year", y=paste("Fortune 500 Rank")) +
-#   layer(data=Top_5, 
-#         mapping=aes(x=as.character(YEAR), y=as.numeric(as.character(RANK)), color=COMPANY), 
-#         stat="identity", 
-#         stat_params=list(), 
-#         geom="point",
-#         geom_params=list(), 
-#         #position=position_identity()
-#         position=position_jitter(width=.3, height=0)
-#   )
+#Graph 2: This graph analyzes the trend of population increase as it pertains to the average industrial stock prices
 
 
+ggplot(Dow_Country) + 
+  coord_cartesian() + 
+  scale_x_continuous() +
+  scale_y_continuous() +
+  labs(title='Dow Jones Industrial Avg vs World Population from 1980 to 2005') +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x="World Population in Millions", y=paste("Industrial Stock Average")) +
+  layer(data=Dow_Country, 
+        mapping=aes(x= WORLD, y=as.numeric(as.character(high)), color=YEAR), 
+        
+        stat="identity", 
+        stat_params=list(), 
+        geom="line",
+        geom_params=list(size = 2.5),
+        #position=position_identity()
+        position=position_jitter(width=.3, height=0)
+  ) +
+  scale_colour_gradient("Year",low= 'red', high='blue')
 
-#Graph 3: This graph looks at the Fortune 500 companies in 1955 that had a revenue greater than $600 Million and highlights whether or not they are in the 90th percentile of the cumulative distribution function for profits.
-# ggplot() + 
-#   coord_cartesian() + 
-#   scale_x_discrete() +
-#   scale_y_continuous() +
-#   labs(title='Expenditure Difference Between Fortune 500 Rank 1 and 10') +
-#   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-#   labs(x="Year", y=paste("Expenditure (Millions)")) +
-#   layer(data=Summarized, 
-#         mapping=aes((x=as.character(YEAR)), y=(Expenses), color=as.character(RANK)), 
-#         stat="identity", 
-#         stat_params=list(), 
-#         geom="bar",
-#         geom_bar(colour = "black",position = "dodge",stat = "identity"),
-#         geom_params=list(), 
-#         #position=position_identity()
-#         position=position_jitter(width=0.3, height=0)
-#   )    
 
-
-#Graph 2: Compares the top 5 Fortune 500 Companies and their revenues relative to the year and the North American population.
+#Graph 3: Compares the top 5 Fortune 500 Companies and their revenues relative to the year and the North American population.
 
 ggplot() + 
   coord_cartesian() + 
   scale_x_continuous() +
-  scale_y_discrete() +
+  scale_y_continuous() +
   facet_grid(~RANK, labeller = label_both) +
   labs(title='Revenue of the Top 5 Fortune 500 Companies Given the Year Relative to Population') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  labs(x="North American Population in Millions", y=paste("Revenue in Millions for that Year")) +
+  labs(x="North American Population in Millions", y=paste("Revenue in Millions")) +
   layer(data=Fortune_Country, 
-        mapping=aes(x=NORTH_AMERICA, y=as.character(REVENUE_IN_MILLIONS_), color=as.character(YEAR)), 
+        mapping=aes(x=NORTH_AMERICA, y=as.numeric(as.character(REVENUE_IN_MILLIONS_)), color=as.character(YEAR)), 
         stat="identity", 
         stat_params=list(), 
         geom="bar",
