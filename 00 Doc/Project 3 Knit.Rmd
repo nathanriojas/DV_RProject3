@@ -27,7 +27,7 @@ Output: html_document
 
 
 #### R markdown code
-#####Immediately below are the codes we adjusted from the R_ETL.R file to create tables for our CSV files. Its is directly pasted from the code because in the code it calls the csv so it cannot run if sourced.
+#####Immediately below are the codes we adjusted from the R_ETL.R file to create tables. Its is directly pasted from the code because in the code it calls the csv so it cannot run if sourced.
 #####The .R file is called using the command directly after. The subsequent code/graphs illustrates the code that goes into
 
 
